@@ -10,10 +10,12 @@ public class Livro {
     private double valor;
     private String isbn;
     private Autor autor;
+    private boolean impresso;
 
     public Livro(Autor autor){
         this();
         this.autor = autor;
+        this.impresso = true;
     }
 
     public Livro(){
@@ -37,6 +39,8 @@ public class Livro {
     public boolean aplicaDescontoDe(double porcentagem){
         if(porcentagem > 0.3)
             return false;
+
+        System.out.println("Aplica desconto no Livro");
 
         this.valor -= this.valor * porcentagem;
         return true;
